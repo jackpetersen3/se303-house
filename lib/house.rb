@@ -1,14 +1,12 @@
 class House
 
     def line(number)
-        "This is the#{horse_and_hound(number)}#{farmer(number)}#{rooster(number)}#{priest(number)}#{man(number)}#{maiden(number)}#{cow(number)}#{dog(number)}#{cat(number)}#{rat(number)}#{malt(number)} house that Jack built.\n"
+        "This is the#{horse(number)}#{farmer(number)}#{rooster(number)}#{priest(number)}#{man(number)}#{maiden(number)}#{cow(number)}#{dog(number)}#{cat(number)}#{rat(number)}#{malt(number)} house that Jack built.\n"
     end
     
-    def horse_and_hound(number)
+    def horse(number)
         if number >= 12
             " horse and the hound and the horn that belonged to the" 
-        else  
-            ""
       end
     end
 
