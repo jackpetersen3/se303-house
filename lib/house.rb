@@ -14,10 +14,8 @@ class House
             "This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
         when 6
             "This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-        when 7
-            "This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
         else
-            "This is the#{horse_and_hound(number)}#{farmer(number)}#{rooster(number)}#{priest(number)} man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
+            "This is the#{horse_and_hound(number)}#{farmer(number)}#{rooster(number)}#{priest(number)}#{man(number)} maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
         end
     end
     
@@ -45,6 +43,13 @@ class House
             " priest all shaven and shorn that married the"
         end
     end
+    
+    def man(number)
+        if number >= 8
+            " man all tattered and torn that kissed the"
+        end
+    end
+
 
 
     def recite
