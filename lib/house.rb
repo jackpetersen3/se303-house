@@ -8,14 +8,8 @@ class House
             "This is the malt that lay in the house that Jack built.\n"
         when 3
             "This is the rat that ate the malt that lay in the house that Jack built.\n"
-        when 4
-            "This is the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-        when 5
-            "This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-        when 6
-            "This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
         else
-            "This is the#{horse_and_hound(number)}#{farmer(number)}#{rooster(number)}#{priest(number)}#{man(number)} maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
+            "This is the#{horse_and_hound(number)}#{farmer(number)}#{rooster(number)}#{priest(number)}#{man(number)}#{maiden(number)}#{cow(number)}#{dog(number)} cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
         end
     end
     
@@ -50,6 +44,23 @@ class House
         end
     end
 
+    def maiden(number)
+        if number >=7
+            " maiden all forlorn that milked the"
+        end
+    end
+
+    def cow(number)
+        if number >=6
+            " cow with the crumpled horn that tossed the"
+        end
+    end
+
+    def dog(number)
+        if number >= 5
+            " dog that worried the"
+        end
+    end 
 
 
     def recite
