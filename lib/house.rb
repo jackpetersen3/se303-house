@@ -6,10 +6,8 @@ class House
              "This is the house that Jack built.\n"
         when 2
             "This is the malt that lay in the house that Jack built.\n"
-        when 3
-            "This is the rat that ate the malt that lay in the house that Jack built.\n"
         else
-            "This is the#{horse_and_hound(number)}#{farmer(number)}#{rooster(number)}#{priest(number)}#{man(number)}#{maiden(number)}#{cow(number)}#{dog(number)} cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
+            "This is the#{horse_and_hound(number)}#{farmer(number)}#{rooster(number)}#{priest(number)}#{man(number)}#{maiden(number)}#{cow(number)}#{dog(number)}#{cat(number)} rat that ate the malt that lay in the house that Jack built.\n"
         end
     end
     
@@ -62,6 +60,11 @@ class House
         end
     end 
 
+    def cat(number)
+        if number >= 4
+            " cat that killed the"
+        end
+    end
 
     def recite
         (1..12).each.collect { |number| line(number) }.join("\n")   
