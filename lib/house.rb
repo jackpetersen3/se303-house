@@ -31,4 +31,12 @@ class House
 end
 
 class Shuffled < House
+
+    def shuffle_phrases
+        PHRASES.shuffle
+    end
+    def line(number)
+        shuffle_phrases
+        "#{@beginning}#{phrase(number)} the house that Jack built.\n"
+    end
 end
