@@ -13,9 +13,12 @@ class House
         " the horse and the hound and the horn that belonged to" 
     ]
 
+    def initialize(beginning = 'This is')
+        @beginning = beginning
+    end
 
     def line(number)
-        "This is#{phrase(number)} the house that Jack built.\n"
+        "#{@beginning}#{phrase(number)} the house that Jack built.\n"
     end
     
     def phrase(number)
