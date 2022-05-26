@@ -69,7 +69,7 @@ class House
         end
     end
 
-    def phrase
+    def phrase(number)
     end
 
     def recite
