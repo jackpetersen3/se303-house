@@ -1,4 +1,4 @@
-class House
+class House    
     PHRASES = [
         " the malt that lay in",
         " the rat that ate",
@@ -13,12 +13,13 @@ class House
         " the horse and the hound and the horn that belonged to" 
     ]
 
+
     def line(number)
         "This is#{phrase(number)} the house that Jack built.\n"
     end
     
     def phrase(number)
-        (number -2 ).downto(0).collect { |i| PHRASES[i]}.join("")
+        (number - 2).downto(0).collect { |i| PHRASES[i]}.join("")
     end
 
     def recite
