@@ -7,7 +7,7 @@ class House
     def horse(number)
         if number >= 12
             " horse and the hound and the horn that belonged to the" 
-      end
+        end
     end
 
     def farmer(number)
@@ -67,6 +67,9 @@ class House
         if number >= 2
             " malt that lay in the"
         end
+    end
+
+    def phrase
     end
 
     def recite
