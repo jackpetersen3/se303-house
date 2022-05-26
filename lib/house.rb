@@ -29,3 +29,6 @@ class House
         (1..12).each.collect { |number| line(number) }.join("\n")   
     end
 end
+
+class Shuffled < House
+end
