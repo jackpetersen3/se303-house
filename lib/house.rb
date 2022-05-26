@@ -1,75 +1,79 @@
 class House
 
     def line(number)
-        "This is the#{horse(number)}#{farmer(number)}#{rooster(number)}#{priest(number)}#{man(number)}#{maiden(number)}#{cow(number)}#{dog(number)}#{cat(number)}#{rat(number)}#{malt(number)} house that Jack built.\n"
+        "This is#{horse(number)}#{farmer(number)}#{rooster(number)}#{priest(number)}#{man(number)}#{maiden(number)}#{cow(number)}#{dog(number)}#{cat(number)}#{rat(number)}#{malt(number)} the house that Jack built.\n"
     end
     
     def horse(number)
         if number >= 12
-            " horse and the hound and the horn that belonged to the" 
+            " the horse and the hound and the horn that belonged to" 
         end
     end
 
     def farmer(number)
         if number >= 11
-            " farmer sowing his corn that kept the"
+            " the farmer sowing his corn that kept"
         end
     end 
 
     def rooster(number)
         if number >= 10
-            " rooster that crowed in the morn that woke the"
+            " the rooster that crowed in the morn that woke"
         end
     end
     def priest(number)
         if number >= 9
-            " priest all shaven and shorn that married the"
+            " the priest all shaven and shorn that married"
         end
     end
     
     def man(number)
         if number >= 8
-            " man all tattered and torn that kissed the"
+            " the man all tattered and torn that kissed"
         end
     end
 
     def maiden(number)
         if number >=7
-            " maiden all forlorn that milked the"
+            " the maiden all forlorn that milked"
         end
     end
 
     def cow(number)
         if number >=6
-            " cow with the crumpled horn that tossed the"
+            " the cow with the crumpled horn that tossed"
         end
     end
 
     def dog(number)
         if number >= 5
-            " dog that worried the"
+            " the dog that worried"
         end
     end 
 
     def cat(number)
         if number >= 4
-            " cat that killed the"
+            " the cat that killed"
         end
     end
 
     def rat(number)
         if number >= 3
-            " rat that ate the"
+            " the rat that ate"
         end 
     end
 
     def malt(number)
         if number >= 2
-            " malt that lay in the"
+            " the malt that lay in"
         end
     end
 
+    def phrases
+    end
+
     def phrase(number)
+        phrases(number - 1)
     end
 
     def recite
