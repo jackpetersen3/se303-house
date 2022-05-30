@@ -30,13 +30,17 @@ class House
     end
 end
 
-class Shuffled < House
 
-    def shuffle_phrases
-        PHRASES.shuffle
+class Random < House
+    def phrase(number)
+        (number - 2).downto(0).collect { |i| randomize(i)}.join("")
     end
-    def line(number)
-        shuffle_phrases
-        "#{@beginning}#{phrase(number)} the house that Jack built.\n"
+    
+    def recite
+        (1..12).each.collect { |number| line(number) }.join("\n")   
+    end
+
+    def randomize(number)
+        PHRASES.shuffle[number]
     end
 end
