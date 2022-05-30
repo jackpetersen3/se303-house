@@ -56,7 +56,7 @@ class House
     end
     
     def phrase(number)
-        (number - 2).downto(0).collect { |i| subject[i] + verb[i]}.join("")
+        (number - 2).downto(0).collect { |i| phrases[i]}.join("")
     end
 
     def recite
