@@ -15,6 +15,30 @@ class House
         ]
     end
 
+    def initialize(beginning = 'This is')
+        @beginning = beginning
+    end
+
+    def line(number)
+        "#{@beginning}#{phrase(number)} the house that Jack built.\n"
+    end
+    
+    def phrase(number)
+        (number - 2).downto(0).collect { |i| phrases[i]}.join("")
+    end
+
+    def recite
+        (1..12).each.collect { |number| line(number) }.join("\n")   
+    end
+end
+
+class RandomHouse < House
+    def phrases
+        super.shuffle
+    end
+end
+
+class RandomSubjectVerb < House
     def subject
         [
             " the malt ",
@@ -46,29 +70,4 @@ class House
             "that belonged to" 
         ]
     end
-
-    def initialize(beginning = 'This is')
-        @beginning = beginning
-    end
-
-    def line(number)
-        "#{@beginning}#{phrase(number)} the house that Jack built.\n"
-    end
-    
-    def phrase(number)
-        (number - 2).downto(0).collect { |i| phrases[i]}.join("")
-    end
-
-    def recite
-        (1..12).each.collect { |number| line(number) }.join("\n")   
-    end
-end
-
-class RandomHouse < House
-    def phrases
-        super.shuffle
-    end
-end
-
-class RandomSubjectVerb < House
 end
