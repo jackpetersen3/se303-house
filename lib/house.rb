@@ -33,4 +33,6 @@ class House
 end
 
 class RandomHouse < House
+    def phrases
+    end
 end
