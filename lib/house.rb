@@ -32,7 +32,5 @@ class House
     end
 end
 
-
-# class Random < House
-#     super.PHRASES.shuffle
-# end
+class RandomHouse < House
+end
