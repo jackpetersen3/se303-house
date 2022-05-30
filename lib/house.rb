@@ -34,5 +34,6 @@ end
 
 class RandomHouse < House
     def phrases
+        super.shuffle
     end
 end
