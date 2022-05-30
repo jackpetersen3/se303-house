@@ -15,6 +15,12 @@ class House
         ]
     end
 
+    def subject
+    end
+
+    def verb
+    end
+
     def initialize(beginning = 'This is')
         @beginning = beginning
     end
