@@ -1,17 +1,19 @@
 class House    
-    PHRASES = [
-        " the malt that lay in",
-        " the rat that ate",
-        " the cat that killed",
-        " the dog that worried",
-        " the cow with the crumpled horn that tossed",
-        " the maiden all forlorn that milked",
-        " the man all tattered and torn that kissed",
-        " the priest all shaven and shorn that married",
-        " the rooster that crowed in the morn that woke",
-        " the farmer sowing his corn that kept",
-        " the horse and the hound and the horn that belonged to" 
-    ]
+    def phrases
+        [
+            " the malt that lay in",
+            " the rat that ate",
+            " the cat that killed",
+            " the dog that worried",
+            " the cow with the crumpled horn that tossed",
+            " the maiden all forlorn that milked",
+            " the man all tattered and torn that kissed",
+            " the priest all shaven and shorn that married",
+            " the rooster that crowed in the morn that woke",
+            " the farmer sowing his corn that kept",
+            " the horse and the hound and the horn that belonged to" 
+        ]
+    end
 
     def initialize(beginning = 'This is')
         @beginning = beginning
@@ -22,7 +24,7 @@ class House
     end
     
     def phrase(number)
-        (number - 2).downto(0).collect { |i| PHRASES[i]}.join("")
+        (number - 2).downto(0).collect { |i| phrases[i]}.join("")
     end
 
     def recite
@@ -31,16 +33,6 @@ class House
 end
 
 
-class Random < House
-    def phrase(number)
-        (number - 2).downto(0).collect { |i| randomize(i)}.join("")
-    end
-    
-    def recite
-        (1..12).each.collect { |number| line(number) }.join("\n")   
-    end
-
-    def randomize(number)
-        PHRASES.shuffle[number]
-    end
-end
+# class Random < House
+#     super.PHRASES.shuffle
+# end
