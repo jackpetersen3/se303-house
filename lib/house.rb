@@ -1,6 +1,7 @@
 class House    
     def phrases
         [
+            " the house that Jack built.\n",
             " the malt that lay in",
             " the rat that ate",
             " the cat that killed",
@@ -15,16 +16,16 @@ class House
         ]
     end
 
-    def initialize(beginning = 'This is')
-        @beginning = beginning
+    def initialize(prefix = 'This is')
+        @prefix = prefix
     end
 
     def line(number)
-        "#{@beginning}#{phrase(number)} the house that Jack built.\n"
+        "#{@prefix}#{phrase(number)}"
     end
     
     def phrase(number)
-        (number - 2).downto(0).collect { |i| phrases[i]}.join("")
+        (number - 1).downto(0).collect { |i| phrases[i]}.join("")
     end
 
     def recite
