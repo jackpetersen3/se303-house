@@ -36,6 +36,10 @@ class House
     def randomize
         RandomHouse.new()
     end
+
+    def random_clause
+        RandomClause.new()
+    end
 end
 
 class RandomHouse < House
@@ -45,7 +49,7 @@ class RandomHouse < House
 end
 
 
-class RandomSubjectVerb < House
+class RandomClause < House
     def subject
         [
             " the house ",
