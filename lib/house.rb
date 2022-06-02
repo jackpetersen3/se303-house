@@ -34,15 +34,16 @@ class House
     end
 
     def randomize
-        RandomHouse.new()
+        RandomHouse.new(@prefix, @seed)
     end
 
     def random_clause
-        RandomClause.new()
+        RandomClause.new(@prefix, @seed)
     end
 end
 
 class RandomHouse < House
+    
     def phrases
         super.shuffle(random: Random.new(@seed))
     end
@@ -69,7 +70,7 @@ class RandomClause < House
 
     def verb
         [
-            "that Jack built.\n",
+            "that Jack built",
             "that lay in",
             "that ate",
             "that killed",
