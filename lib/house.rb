@@ -16,8 +16,9 @@ class House
         ]
     end
 
-    def initialize(prefix = 'This is')
+    def initialize(prefix = 'This is', seed = 0)
         @prefix = prefix
+        @seed = seed
     end
 
     def line(number)
@@ -31,17 +32,20 @@ class House
     def recite
         (1..12).each.collect { |number| line(number) }.join("\n")   
     end
+
+    def randomize
+        phrases.shuffle(random: Random.new(@seed))
+        recite
+    end
 end
 
-class RandomHouse < House
-    def phrases
-        super.shuffle
-    end
+class NormalHouse < House
 end
 
 class RandomSubjectVerb < House
     def subject
         [
+            " the house ",
             " the malt ",
             " the rat ",
             " the cat ",
@@ -53,11 +57,12 @@ class RandomSubjectVerb < House
             " the rooster that crowed in the morn ",
             " the farmer sowing his corn ",
             " the horse and the hound and the horn " 
-        ]
+        ].shuffle(seed)
     end
 
     def verb
         [
+            "that Jack built.\n",
             "that lay in",
             "that ate",
             "that killed",
@@ -69,7 +74,7 @@ class RandomSubjectVerb < House
             "that woke",
             "that kept",
             "that belonged to" 
-        ]
+        ].shuffle(seed)
     end
 
     def phrase(number)
