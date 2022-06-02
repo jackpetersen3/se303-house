@@ -1,7 +1,7 @@
 class House    
     def phrases
         [
-            " the house that Jack built.\n",
+            " the house that Jack built",
             " the malt that lay in",
             " the rat that ate",
             " the cat that killed",
@@ -16,13 +16,13 @@ class House
         ]
     end
 
-    def initialize(prefix = 'This is', seed = 0)
+    def initialize(prefix = 'This is', seed = 1)
         @prefix = prefix
         @seed = seed
     end
 
     def line(number)
-        "#{@prefix}#{phrase(number)}"
+        "#{@prefix}#{phrase(number)}.\n"
     end
     
     def phrase(number)
@@ -34,13 +34,16 @@ class House
     end
 
     def randomize
-        phrases.shuffle(random: Random.new(@seed))
-        recite
+        RandomHouse.new()
     end
 end
 
-class NormalHouse < House
+class RandomHouse < House
+    def phrases
+        super.shuffle(random: Random.new(@seed))
+    end
 end
+
 
 class RandomSubjectVerb < House
     def subject
@@ -57,7 +60,7 @@ class RandomSubjectVerb < House
             " the rooster that crowed in the morn ",
             " the farmer sowing his corn ",
             " the horse and the hound and the horn " 
-        ].shuffle(seed)
+        ].shuffle(random: Random.new(@seed))
     end
 
     def verb
@@ -74,7 +77,7 @@ class RandomSubjectVerb < House
             "that woke",
             "that kept",
             "that belonged to" 
-        ].shuffle(seed)
+        ].shuffle(random: Random.new(@seed))
     end
 
     def phrase(number)
