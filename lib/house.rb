@@ -85,6 +85,6 @@ class RandomClause < House
     end
 
     def phrase(number)
-        (number - 2).downto(0).collect { |i| subject[i] + verb[i]}.join("")
+        (number - 1).downto(0).collect { |i| subject[i] + verb[i]}.join("")
     end
 end
