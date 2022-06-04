@@ -16,9 +16,9 @@ class House
         ]
     end
 
-    def initialize(prefix = 'This is', seed = 1)
+    def initialize(prefix = 'This is')
         @prefix = prefix
-        @seed = seed
+        @seed = rand(1..10)
     end
 
     def line(number)
@@ -34,11 +34,11 @@ class House
     end
 
     def randomize
-        RandomHouse.new(@prefix, @seed)
+        RandomHouse.new(@prefix)
     end
 
     def random_clause
-        RandomClause.new(@prefix, @seed)
+        RandomClause.new(@prefix)
     end
 end
 
