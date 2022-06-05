@@ -1,7 +1,6 @@
 class House    
     def phrases
         [
-            " the house that Jack built",
             " the malt that lay in",
             " the rat that ate",
             " the cat that killed",
@@ -22,11 +21,11 @@ class House
     end
 
     def line(number)
-        "#{@prefix}#{phrase(number)}.\n"
+        "#{@prefix}#{phrase(number)} the house that Jack built.\n"
     end
     
     def phrase(number)
-        (number - 1).downto(0).collect { |i| phrases[i]}.join("")
+        (number - 2).downto(0).collect { |i| phrases[i]}.join("")
     end
 
     def recite
@@ -86,6 +85,6 @@ class RandomClause < House
     end
 
     def phrase(number)
-        (number - 1).downto(0).collect { |i| subject[i] + verb[i]}.join("")
+        (number - 2).downto(0).collect { |i| subject[i] + verb[i]}.join("")
     end
 end
